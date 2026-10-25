@@ -38,3 +38,6 @@ scripts/publish_release.py
 scripts/recreate_repo.py
 scripts/repo_rebuild_push.sh
 scripts/verify_content.py
+download/announcement/
+download/social_preview.png
+scripts/make_social_preview.py

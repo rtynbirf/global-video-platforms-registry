@@ -1,0 +1,40 @@
+name: "\U0001F527 Data correction"
+description: "Report a wrong status, dead link, moved domain or wrong category for an existing record"
+title: "[data] "
+labels: ["data-correction"]
+body:
+  - type: input
+    id: platform
+    attributes:
+      label: Platform name (as in registry)
+      placeholder: "e.g. Eros Now"
+    validations:
+      required: true
+  - type: input
+    id: record_id
+    attributes:
+      label: Record id (from CSV/JSON, if known)
+      placeholder: "e.g. 412"
+  - type: dropdown
+    id: field
+    attributes:
+      label: What is wrong?
+      options:
+        - "status (active/closed/merged wrong)"
+        - "official_url (dead / moved / wrong domain)"
+        - "category or region"
+        - "user_upload flag"
+        - "other field"
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence (link to announcement, Wayback snapshot, official page)
+      placeholder: "https://web.archive.org/... or official announcement URL"
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed fix (field → new value)

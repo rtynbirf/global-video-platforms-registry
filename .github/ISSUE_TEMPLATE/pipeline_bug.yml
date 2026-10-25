@@ -1,0 +1,26 @@
+name: "\U0001F41B Pipeline bug"
+description: "Bug in validation CI, audit script or build pipeline (not a data correction)"
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - "CI validate workflow"
+        - "scripts/audit_repo.py"
+        - "build/export scripts"
+        - "datapackage.json / CITATION.cff"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened (log excerpt welcome)
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction steps

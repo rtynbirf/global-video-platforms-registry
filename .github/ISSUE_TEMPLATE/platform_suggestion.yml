@@ -1,0 +1,58 @@
+name: "\u2795 Platform suggestion"
+description: "Suggest a missing video platform that satisfies the inclusion policy (no political, no adult)"
+title: "[suggest] "
+labels: ["platform-suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before submitting — check the CSV (`status == active`) that the platform is not already listed,
+        including regional versions. Regional versions of an existing platform are merged, not separate records.
+  - type: input
+    id: name
+    attributes:
+      label: Platform name
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Official URL
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - "streaming (SVOD/AVOD/FAST)"
+        - "ugc_hosting"
+        - "broadcaster_iplayer"
+        - "sports"
+        - "anime"
+        - "vertical/niche"
+        - "self-hosted system"
+        - "other"
+    validations:
+      required: true
+  - type: dropdown
+    id: user_upload
+    attributes:
+      label: Public user uploads allowed?
+      options: ["yes", "no", "partial"]
+    validations:
+      required: true
+  - type: input
+    id: region_country
+    attributes:
+      label: Region / country of operation
+      placeholder: "e.g. Europe / Estonia"
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Independent source (wiki, press, app store listing)
+    validations:
+      required: true
