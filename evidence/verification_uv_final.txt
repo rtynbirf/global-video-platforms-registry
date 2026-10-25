@@ -1,0 +1,23 @@
+1163|Planet Marathi OTT|https://planetmarathi.com/|code=000|via=doh:179.61.189.147|title=
+1166|Atrangii|https://www.atrangii.com/|code=000|via=doh:64.190.63.111|title=
+1172|Toffee|https://www.toffee.com.bd/|code=000|via=NXDOMAIN|title=
+1312|Bstation|https://www.bstation.com|code=000|via=NXDOMAIN|title=
+1355|UpLive|https://www.uplive.com|code=000|via=NXDOMAIN|title=
+1370|smash.|https://smash.media|code=000|via=NXDOMAIN|title=
+1371|Anime Times|https://animetimestv.com|code=000|via=NXDOMAIN|title=
+1397|Trace Play|https://traceplay.tv|code=000|via=doh:104.247.81.99|title=
+1418|Filmatique|https://www.filmatique.tv|code=000|via=NXDOMAIN|title=
+1438|GoPlay.bg|https://goplay.bg|code=000|via=NXDOMAIN|title=
+1440|BrutX|https://www.brutx.com|code=301|via=direct|title=
+169|iROKOtv|https://irokotv.com|code=404|via=direct|title=Page Not Found - The content you are searching for is not available
+295|AzTV|https://aztv.az|code=000|via=doh:178.76.6.130|title=
+343|Playeur|https://playeur.com|code=000|via=doh:172.67.136.208|title=
+438|Discover.film|https://discover.film|code=000|via=doh:217.160.0.173|title=
+441|Slow Channel|https://slowchannel.com|code=403|via=direct|title=Just a moment...
+58|Josh|https://joshapp.com|code=200|via=doh:54.243.117.197|title=JoshApp.com is for sale | HugeDomains
+B5-023|Stievie|https://www.stievie.be|code=000|via=NXDOMAIN|title=
+B5-071|TVA+|https://www.tvaplus.ca|code=307|via=direct|title=
+B5-077|Cineplex Store|https://cineplexstore.com|code=000|via=doh:185.169.253.175|title=
+B5-078|Highball.TV|https://highball.tv|code=000|via=doh:74.208.236.205|title=
+B5-122|KHL|https://www.khl.ru|code=307|via=direct|title=
+B5-131|EFL iFollow|https://ifollow.co.uk|code=302|via=direct|title=

@@ -1,0 +1,25 @@
+# UV-final resolution table (2026-10-25) — applied to registry_final.json
+# id | name | new_status | new_verdict | new_url | note
+58|Josh|parked|PARKED||Домен выставлен на продажу (HugeDomains), подтверждено HTTP 200 2026-10-25
+169|iROKOtv|unverified_dead|NOT_FOUND|https://irokotv.com|Сайт 404; приложение удалено из Google Play 2025-04 (AppBrain); CEO отрицает закрытие (X 2025-06) — статус неоднозначен
+295|AzTV|active|BLOCKED||Госвещатель Азербайджана жив; DNS OK, egress из песочницы заблокирован; Wikipedia: active
+343|Playeur|unverified|BAD_URL|https://playeur.com|URL восстановлен (playeur.com, Cloudflare); из песочницы TLS-блок, подтвердить вне песочницы
+438|Discover.film|active|BLOCKED||Discover Film Awards/short-film platform; DNS OK (IONOS), egress заблокирован; активность подтверждена FestHome/FB
+441|Slow Channel|active|BLOCKED||HTTP 403 Cloudflare challenge "Just a moment" = жив за анти-ботом
+1163|Planet Marathi OTT|active|BLOCKED||Wikipedia: Current status Active; egress-блок из песочницы
+1166|Atrangii|active|ALIVE|https://atrangii.in/|Официальный домен atrangii.in (atrangii.com был паркингом); приложение обновлялось 2025-04
+1172|Toffee|active|ALIVE|https://toffeelive.com|Домен переехал toffee.com.bd→toffeelive.com; Wikipedia Current status Active; HTTP 200
+1312|Bstation (Bilibili overseas)|active|ALIVE|https://www.bilibili.tv|Bstation = международный бренд Bilibili; bstation.com закрыт → bilibili.tv (HTTP 200)
+1355|UpLive|active|ALIVE|https://h5.upliveapp.com|uplive.com закрыт; веб-приложение h5.upliveapp.com HTTP 200
+1370|smash.|active|ALIVE|https://smash-media.jp|Официальный домен smash-media.jp (HTTP 200, вертикальное видео Showroom)
+1371|Anime Times|merged|||Автономный сайт NXDOMAIN; работает как канал Amazon Prime Video с 2023-12 (JustWatch/IMDb/офиц. YouTube)
+1397|Trace Play|closed|PARKED||Домен на паркинге (Bodis 104.247.81.99); бренды Trace живут на trace.tv
+1418|Filmatique|merged|||Filmatique стал Kino Film Collection (Kino Lorber); цель слияния уже в реестре
+1438|GoPlay.bg|closed|DNS_FAIL||Домен NXDOMAIN; актуальная платформа bTV — btvplus.bg
+1440|BrutX|PENDING|PENDING||need Location of 301
+B5-023|Stievie|active|ALIVE|https://stievie.be|www-поддомен NXDOMAIN, apex stievie.be HTTP 200
+B5-071|TVA+|active|BLOCKED||307 в auth-waiting-room QUB (connect.qub.ca) = жив за авторизацией
+B5-077|Cineplex Store|active|BLOCKED||DoH OK; egress-блок; cineplex.com 403 анти-бот
+B5-078|Highball.TV|active|BLOCKED||DoH OK (IONOS); egress-блок из песочницы
+B5-122|KHL|active|BLOCKED||307 geo-loop; КХЛ активно действует (egress RU-блок)
+B5-131|EFL iFollow|active|BLOCKED||302 redirect; сервис iFollow действует (EFL)

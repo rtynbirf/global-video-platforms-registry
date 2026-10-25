@@ -1,0 +1,240 @@
+{
+ "$schema": "https://datapackage.org/schemas/data-package.json",
+ "name": "global-video-platforms-registry-2026",
+ "title": "Global Video Platforms Registry 2026 (verified)",
+ "description": "Верифицированный реестр 1071 видеоплатформы: HTTP-проверка каждого домена, трассировка ребрендингов (merged→moved_to), явная политика контента. Два прохода верификации 2026-10-24/25 + финальная дочистка хвостов.",
+ "version": "3.2.0",
+ "created": "2026-10-25",
+ "licenses": [
+  {
+   "name": "CC-BY-4.0",
+   "path": "https://creativecommons.org/licenses/by/4.0/legalcode.txt",
+   "title": "Creative Commons Attribution 4.0 International"
+  }
+ ],
+ "contributors": [
+  {
+   "title": "rtynbirf",
+   "role": "author"
+  },
+  {
+   "title": "Z.ai verification pipeline",
+   "role": "contributor"
+  }
+ ],
+ "keywords": [
+  "video platforms",
+  "streaming",
+  "OTT",
+  "registry",
+  "verified dataset",
+  "media research"
+ ],
+ "homepage": "https://github.com/rtynbirf/global-video-platforms-registry",
+ "resources": [
+  {
+   "name": "global_video_platforms_registry_2026",
+   "title": "Реестр видеоплатформ (основная таблица)",
+   "path": "download/global_video_platforms_registry_2026.csv",
+   "type": "table",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8-sig",
+   "dialect": {
+    "csv": {
+     "delimiter": ",",
+     "header": true,
+     "lineTerminator": "\r\n"
+    }
+   },
+   "schema": {
+    "fields": [
+     {
+      "name": "id",
+      "type": "string",
+      "description": "Стабильный ID записи (база 1-451, добор B5-xxx)",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "name",
+      "type": "string",
+      "description": "Название платформы",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "official_url",
+      "type": "string",
+      "description": "Официальный домен/путь (актуальный после ребрендингов)"
+     },
+     {
+      "name": "region",
+      "type": "string",
+      "description": "География (12 енумов)",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "region_orig",
+      "type": "string",
+      "description": "Регион исходного набора"
+     },
+     {
+      "name": "country",
+      "type": "string",
+      "description": "Страна"
+     },
+     {
+      "name": "category",
+      "type": "string",
+      "description": "Категория платформы",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "user_upload",
+      "type": "string",
+      "description": "Публичная пользовательская загрузка",
+      "constraints": {
+       "enum": [
+        "yes",
+        "no",
+        "partial"
+       ]
+      }
+     },
+     {
+      "name": "status",
+      "type": "string",
+      "description": "Статус жизненного цикла",
+      "constraints": {
+       "enum": [
+        "active",
+        "merged",
+        "closed",
+        "parked",
+        "unverified",
+        "unverified_dead"
+       ],
+       "required": true
+      }
+     },
+     {
+      "name": "status_detail",
+      "type": "string",
+      "description": "Уточнение статуса"
+     },
+     {
+      "name": "verdict_http",
+      "type": "string",
+      "description": "Сырой HTTP-вердикт последней пробы"
+     },
+     {
+      "name": "moved_to",
+      "type": "string",
+      "description": "Платформа-преемник (для merged)"
+     },
+     {
+      "name": "notes",
+      "type": "string",
+      "description": "Факты последней проверки"
+     },
+     {
+      "name": "verified_date",
+      "type": "date",
+      "description": "Дата последней верификации (ISO-8601)",
+      "constraints": {
+       "pattern": "\\d{4}-\\d{2}-\\d{2}",
+       "required": true
+      }
+     },
+     {
+      "name": "source",
+      "type": "string",
+      "description": "Метод/источник проверки"
+     },
+     {
+      "name": "confidence",
+      "type": "string",
+      "description": "Уверенность High/Medium/Low"
+     },
+     {
+      "name": "origin",
+      "type": "string",
+      "description": "Происхождение записи",
+      "constraints": {
+       "required": true
+      }
+     }
+    ],
+    "primaryKey": [
+     "id"
+    ]
+   },
+   "hash": "sha256:6dab6bb4c36fce015387b9349d5b3ca69039b8b29a79fc07022ebaba44abdd77",
+   "stats": {
+    "rows": 1071
+   }
+  }
+ ],
+ "views": [
+  {
+   "name": "status_summary",
+   "title": "Статусы",
+   "type": "report",
+   "spec": {
+    "bins": [
+     {
+      "value": "active",
+      "count": 1032
+     },
+     {
+      "value": "merged",
+      "count": 21
+     },
+     {
+      "value": "closed",
+      "count": 15
+     },
+     {
+      "value": "parked",
+      "count": 1
+     },
+     {
+      "value": "unverified_dead",
+      "count": 1
+     },
+     {
+      "value": "unverified",
+      "count": 1
+     }
+    ]
+   }
+  }
+ ],
+ "custom": {
+  "status_counts": {
+   "active": 1032,
+   "parked": 1,
+   "merged": 21,
+   "closed": 15,
+   "unverified_dead": 1,
+   "unverified": 1
+  },
+  "active_total": 1032,
+  "verified_dates": [
+   "2026-10-24",
+   "2026-10-25"
+  ],
+  "policy_exclusions": "see excluded_policy in JSON package (11 records: political, adult)",
+  "same_domain_distinct_products": [
+   "vimeo.com (Vimeo / Vimeo OTT)",
+   "linkedin.com (LinkedIn / LinkedIn Learning)"
+  ]
+ }
+}

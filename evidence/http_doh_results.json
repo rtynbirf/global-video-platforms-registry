@@ -1,0 +1,136 @@
+{
+ "FTV (RTFBiH)": {
+  "domain": "ftv.ba",
+  "status": 3,
+  "ips": [],
+  "verdict": "NXDOMAIN_dead"
+ },
+ "Mola": {
+  "domain": "mola.tv",
+  "status": 0,
+  "ips": [],
+  "verdict": "no_A/0"
+ },
+ "MX TakaTak": {
+  "domain": "mxtakatak.com",
+  "status": 0,
+  "ips": [],
+  "verdict": "no_A/0"
+ },
+ "Filmatique": {
+  "domain": "filmatique.tv",
+  "status": 3,
+  "ips": [],
+  "verdict": "NXDOMAIN_dead"
+ },
+ "Sooner": {
+  "domain": "sooner.club",
+  "status": 3,
+  "ips": [],
+  "verdict": "NXDOMAIN_dead"
+ },
+ "Festhome TV": {
+  "domain": "festhome.tv",
+  "status": 0,
+  "ips": [
+   "52.92.17.204",
+   "52.92.19.84",
+   "3.5.94.54"
+  ],
+  "verdict": "RESOLVES"
+ },
+ "WRESTLE UNIVERSE": {
+  "domain": "wrestle-universe.jp",
+  "status": 3,
+  "ips": [],
+  "verdict": "NXDOMAIN_dead"
+ },
+ "Vidgo": {
+  "domain": "vidgo.com",
+  "status": 0,
+  "ips": [
+   "15.197.148.33",
+   "3.33.130.190"
+  ],
+  "verdict": "RESOLVES"
+ },
+ "UpLive": {
+  "domain": "upliveapps.com",
+  "status": 0,
+  "ips": [],
+  "verdict": "no_A/0"
+ },
+ "Aloula": {
+  "domain": "aloula.ma",
+  "status": 3,
+  "ips": [],
+  "verdict": "NXDOMAIN_dead"
+ },
+ "GoPlay.bg": {
+  "domain": "goplay.bg",
+  "status": 3,
+  "ips": [],
+  "verdict": "NXDOMAIN_dead"
+ },
+ "J:COM STREAM": {
+  "domain": "jcom.stream",
+  "status": 3,
+  "ips": [],
+  "verdict": "NXDOMAIN_dead"
+ },
+ "LINE TV": {
+  "domain": "line.me",
+  "status": 0,
+  "ips": [
+   "147.92.243.206"
+  ],
+  "verdict": "RESOLVES"
+ },
+ "Bstation": {
+  "domain": "bstation.com",
+  "status": 0,
+  "ips": [],
+  "verdict": "no_A/0"
+ },
+ "Toffee": {
+  "domain": "toffee.com.bd",
+  "status": 3,
+  "ips": [],
+  "verdict": "NXDOMAIN_dead"
+ },
+ "Anime Times": {
+  "domain": "animetimestv.com",
+  "status": 3,
+  "ips": [],
+  "verdict": "NXDOMAIN_dead"
+ },
+ "WASD.tv": {
+  "domain": "wasd.tv",
+  "status": 3,
+  "ips": [],
+  "verdict": "NXDOMAIN_dead"
+ },
+ "Pilipinas Live": {
+  "domain": "pilipinas.live",
+  "status": 2,
+  "ips": [],
+  "verdict": "no_A/2"
+ },
+ "DistroTV": {
+  "domain": "distro.tv",
+  "status": 0,
+  "ips": [
+   "104.219.250.36",
+   "2.59.170.19"
+  ],
+  "verdict": "RESOLVES"
+ },
+ "RugbyPass TV": {
+  "domain": "rugbypasstv.com",
+  "status": 0,
+  "ips": [
+   "167.172.228.26"
+  ],
+  "verdict": "RESOLVES"
+ }
+}

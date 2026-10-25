@@ -1,0 +1,67 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install system deps for XLSX/PDF checks (skip heavy builds)
+        run: |
+          sudo apt-get update -qq || true
+
+      - name: Data integrity audit
+        env:
+          REPO_ROOT: ${{ github.workspace }}
+        run: |
+          python scripts/audit_repo.py
+
+      - name: Datapackage schema sanity
+        run: |
+          python - <<'EOF'
+          import json, sys
+          pkg = json.load(open('datapackage.json', encoding='utf-8'))
+          assert pkg['resources'][0]['schema']['primaryKey'] == ['id']
+          assert pkg['resources'][0]['stats']['rows'] == 1071, 'row count drift'
+          assert pkg['custom']['active_total'] == 1032, 'active count drift'
+          assert pkg['licenses'][0]['name'] == 'CC-BY-4.0'
+          fields = pkg['resources'][0]['schema']['fields']
+          assert len(fields) == 17, 'column count drift'
+          print('datapackage ok:', pkg['version'], '| rows', pkg['resources'][0]['stats']['rows'])
+          EOF
+
+      - name: CITATION.cff sanity
+        run: |
+          python - <<'EOF'
+          import sys
+          try:
+              import yaml
+          except ImportError:
+              txt = open('CITATION.cff', encoding='utf-8').read()
+              assert 'Global Video Platforms Registry' in txt and 'version: 3.2.0' in txt
+              print('citation ok (fallback): 3.2.0')
+              sys.exit(0)
+          c = yaml.safe_load(open('CITATION.cff', encoding='utf-8'))
+          assert c['title'].startswith('Global Video Platforms Registry')
+          assert c['version'] == '3.2.0'
+          print('citation ok:', c['version'])
+          EOF
+
+      - name: README numbers sync
+        run: |
+          python - <<'EOF'
+          import re, sys
+          r = open('README.md', encoding='utf-8').read()
+          assert '**1032**' in r, 'README active count stale'
+          assert '1071' in r, 'README total stale'
+          print('README numbers ok')
+          EOF

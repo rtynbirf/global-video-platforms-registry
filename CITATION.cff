@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it using the metadata below."
+title: "Global Video Platforms Registry 2026 (verified, 1071 records)"
+authors:
+  - alias: rtynbirf
+    name-suffix: "and contributors"
+version: 3.2.0
+date-released: "2026-10-25"
+license: CC-BY-4.0
+repository-code: "https://github.com/rtynbirf/global-video-platforms-registry"
+url: "https://github.com/rtynbirf/global-video-platforms-registry"
+abstract: >-
+  A machine-readable registry of 1071 video platforms worldwide with per-domain
+  HTTP verification (two full passes: 2026-10-24 and 2026-10-25), documented
+  verdict scheme (ALIVE/BLOCKED/PARKED/MOVED), rebrand and closure tracking
+  (21 merged rows with successors), and an explicit content policy that
+  excludes piracy, political propaganda and adult platforms.
+  Delivered as CSV/JSON/XLSX plus a verification report.
+keywords:
+  - video platforms
+  - streaming
+  - OTT
+  - registry
+  - dataset
+  - media research
