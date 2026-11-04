@@ -1,6 +1,6 @@
 #!/bin/bash
 # Final pass over stubborn unverified entries: curl + DoH fallback
-OUT=/home/z/my-project/registry_work/checks/uv_final_results.txt
+OUT=registry_work/checks/uv_final_results.txt
 : > "$OUT"
 UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
 

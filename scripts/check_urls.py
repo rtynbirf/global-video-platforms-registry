@@ -11,11 +11,16 @@ Output: JSON array of results with verdicts:
   SERVER_ERR / DNS_FAIL / TIMEOUT / UNREACHABLE / SSL_ERR / REDIRECT_LOOP / BAD_URL
 Verdicts are saved incrementally (atomic tmp+rename) so a crash or context
 loss never destroys partial work.
+
+TLS: certificate verification is ON by default. Opt-out is explicit and loud:
+set env REGISTRY_ALLOW_TLS_OFF=1 (prints a stderr banner; MITM risk, sandbox
+use only).
 """
 import concurrent.futures
 import gzip
 import io
 import json
+import os
 import re
 import socket
 import ssl
@@ -27,9 +32,9 @@ import urllib.request
 from datetime import datetime, timezone
 
 IN_PATH = sys.argv[1] if len(sys.argv) > 1 else \
-    '/home/z/my-project/registry_work/extracted/global_video_platforms_research_RU/register.json'
+    'registry_work/extracted/global_video_platforms_research_RU/register.json'
 OUT_PATH = sys.argv[2] if len(sys.argv) > 2 else \
-    '/home/z/my-project/registry_work/checks/base_results.json'
+    'registry_work/checks/base_results.json'
 WORKERS = int(sys.argv[3]) if len(sys.argv) > 3 else 32
 TIMEOUT = 14
 UA = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
@@ -41,9 +46,20 @@ PARKED_RX = re.compile(
     r'домен\s+прода(ё|е)тся|купить\s+домен|спаркован|this\s+webpage\s+parked)', re.I)
 TITLE_RX = re.compile(r'<title[^>]*>(.*?)</title>', re.I | re.S)
 
+# TLS verification is ON by default; opt-out must be explicit via env var.
+INSECURE_TLS = os.environ.get('REGISTRY_ALLOW_TLS_OFF', '') == '1'
+
 CTX = ssl.create_default_context()
-CTX.check_hostname = False
-CTX.verify_mode = ssl.CERT_NONE
+if INSECURE_TLS:
+    CTX.check_hostname = False
+    CTX.verify_mode = ssl.CERT_NONE
+    sys.stderr.write(
+        '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n'
+        '!! ВНИМАНИЕ: TLS-проверка ОТКЛЮЧЕНА (MITM-риск):\n'
+        '!! включено REGISTRY_ALLOW_TLS_OFF=1 — сертификаты серверов НЕ проверяются.\n'
+        '!! Допустимо только в изолированной песочнице, не для продакшена.\n'
+        '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n')
+    sys.stderr.flush()
 
 
 def fetch(url):
@@ -197,7 +213,6 @@ def main():
                 tmp = OUT_PATH + '.tmp'
                 with open(tmp, 'w', encoding='utf-8') as f:
                     json.dump(results, f, ensure_ascii=False)
-                import os
                 os.replace(tmp, OUT_PATH)
     # summary
     from collections import Counter

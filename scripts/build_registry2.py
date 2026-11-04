@@ -9,7 +9,7 @@ import json, os, re, sys, importlib.util
 from datetime import date
 from urllib.parse import urlparse
 
-W = '/home/z/my-project/registry_work'
+W = 'registry_work'
 OUT = os.path.join(W, 'final')
 TODAY = '2026-10-25'
 

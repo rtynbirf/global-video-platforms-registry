@@ -4,8 +4,8 @@
 from pypdf import PdfWriter
 import zipfile, os, datetime
 
-F = '/home/z/my-project/registry_work/final'
-D = '/home/z/my-project/download'
+F = 'registry_work/final'
+D = 'download'
 
 # 1) PDF merge
 out_pdf = D + '/registry_verification_report_2026.pdf'

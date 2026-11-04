@@ -4,7 +4,7 @@
 Template 07 Crystal Blue body palette (fixed per typesetting/cover.md).
 FreeSerif for Cyrillic; TocDocTemplate + multiBuild; safe tables."""
 import sys, os, json, hashlib
-PDF_SKILL_DIR = '/home/z/my-project/skills/pdf'
+PDF_SKILL_DIR = '~/skills/pdf'
 sys.path.insert(0, os.path.join(PDF_SKILL_DIR, 'scripts'))
 
 from reportlab.lib.pagesizes import A4
@@ -45,7 +45,7 @@ ACCENT       = colors.HexColor('#2d7ab3')
 TEXT_PRIMARY = colors.HexColor('#142840')
 TEXT_MUTED   = colors.HexColor('#5a7a96')
 
-W = '/home/z/my-project/registry_work'
+W = 'registry_work'
 records = json.load(open(W + '/final/registry_final.json', encoding='utf-8'))
 from collections import Counter
 st = Counter(r['status'] for r in records)
@@ -473,7 +473,7 @@ story.append(Paragraph(
  'раз в квартал: рынок стриминга сейчас меняется быстрее, чем раз в год, и quarterly-цикл '
  'соответствует темпам слияний, зафиксированным в разделе 5.', body))
 
-doc = TocDocTemplate('/home/z/my-project/registry_work/final/report_body.pdf',
+doc = TocDocTemplate(W + '/final/report_body.pdf',
                      pagesize=A4, leftMargin=MARGIN, rightMargin=MARGIN,
                      topMargin=MARGIN + 6, bottomMargin=MARGIN,
                      title='Глобальный реестр видеоплатформ — отчёт о верификации 2026',

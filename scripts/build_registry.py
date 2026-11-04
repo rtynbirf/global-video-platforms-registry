@@ -11,7 +11,7 @@ import json, os, re, unicodedata
 from datetime import date
 from urllib.parse import urlparse
 
-W = '/home/z/my-project/registry_work'
+W = 'registry_work'
 OUT = os.path.join(W, 'final')
 os.makedirs(OUT, exist_ok=True)
 TODAY = '2026-10-24'
@@ -143,7 +143,7 @@ def merge_key(name):
 
 # ---------- content policy sets (mirror of merge script) ----------
 import importlib.util
-spec = importlib.util.spec_from_file_location('mc', '/home/z/my-project/scripts/merge_candidates.py')
+spec = importlib.util.spec_from_file_location('mc', 'scripts/merge_candidates.py')
 # We don't execute merge script (it would re-run); replicate only the filter:
 POLITICAL_DOMAINS = {'rt.com','russia.tv','sputniknews.com','sputnikglobe.com','presstv.ir',
  'hispantv.com','almayadeen.net','alalam.ir','irib.ir','telewebion.com','manototv.com',

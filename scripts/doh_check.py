@@ -46,5 +46,5 @@ for label, dom in DOMAINS.items():
     out[label] = {'domain': dom, 'status': st, 'ips': answers[:3], 'verdict': verdict}
     print('%-18s %-16s %s' % (label, dom, verdict), answers[:2] if answers else '')
 
-json.dump(out, open('/home/z/my-project/registry_work/checks/doh_results.json', 'w',
+json.dump(out, open('registry_work/checks/doh_results.json', 'w',
                     encoding='utf-8'), ensure_ascii=False, indent=1)

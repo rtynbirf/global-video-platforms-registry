@@ -3,7 +3,7 @@
 """audit_repo.py — integrity + consistency audit of the registry deliverables."""
 import json, csv, re, sys, collections, os
 
-ROOT = os.environ.get('REPO_ROOT', '/home/z/my-project')
+ROOT = os.environ.get('REPO_ROOT', '.')
 D = ROOT + '/download'
 E = ROOT + '/evidence'
 issues, warns = [], []

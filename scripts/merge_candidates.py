@@ -3,7 +3,7 @@
 """merge_candidates.py — merge base registry (451) + sub-agent candidates (419).
 Dedupe by registrable domain and normalized name. Apply content policy filter:
 EXCLUDE political/propaganda platforms and adult/porn platforms (user directive).
-Outputs to /home/z/my-project/registry_work/merged/:
+Outputs to registry_work/merged/:
   new_candidates.json  — unique, filtered, ids 1001+, ready for HTTP check
   dupes.json           — candidates dropped as duplicates of base
   excluded.json        — entries excluded by content policy (with reason)
@@ -13,7 +13,7 @@ Outputs to /home/z/my-project/registry_work/merged/:
 import json, os, re, unicodedata
 from urllib.parse import urlparse
 
-WORK = '/home/z/my-project/registry_work'
+WORK = 'registry_work'
 OUT = os.path.join(WORK, 'merged')
 os.makedirs(OUT, exist_ok=True)
 

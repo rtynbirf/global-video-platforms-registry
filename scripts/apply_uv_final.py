@@ -3,7 +3,7 @@
 """apply_uv_final.py — apply 23 verified resolutions to registry_final.json, update summary.json."""
 import json, collections
 
-W = '/home/z/my-project/registry_work/final'
+W = 'registry_work/final'
 reg = json.load(open(W + '/registry_final.json', encoding='utf-8'))
 by_id = {str(r['id']): r for r in reg}
 

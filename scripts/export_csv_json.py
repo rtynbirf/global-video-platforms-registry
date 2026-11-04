@@ -3,8 +3,8 @@
 """export_csv_json.py — flat CSV (UTF-8 BOM, 17 cols) + JSON dump to download/."""
 import json, csv
 
-W = '/home/z/my-project/registry_work/final'
-D = '/home/z/my-project/download'
+W = 'registry_work/final'
+D = 'download'
 reg = json.load(open(W + '/registry_final.json', encoding='utf-8'))
 summary = json.load(open(W + '/summary.json', encoding='utf-8'))
 excluded = json.load(open(W + '/excluded_policy.json', encoding='utf-8'))

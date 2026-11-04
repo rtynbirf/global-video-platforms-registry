@@ -3,7 +3,7 @@
 """make_xlsx.py — registry_final.xlsx per xlsx-skill design system.
 Sheets: Сводка / Реестр / Исключённые / Методология. Russian UI."""
 import json, sys, os
-XLSX_SKILL_DIR = '/home/z/my-project/skills/xlsx'
+XLSX_SKILL_DIR = '~/skills/xlsx'
 for sub in [XLSX_SKILL_DIR, os.path.join(XLSX_SKILL_DIR, 'templates')]:
     if sub not in sys.path:
         sys.path.insert(0, sub)
@@ -12,7 +12,7 @@ from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment
 from openpyxl.utils import get_column_letter
 
-W = '/home/z/my-project/registry_work'
+W = 'registry_work'
 records = json.load(open(W + '/final/registry_final.json', encoding='utf-8'))
 summary = json.load(open(W + '/final/summary.json', encoding='utf-8'))
 excluded = json.load(open(W + '/final/excluded_policy.json', encoding='utf-8'))
@@ -171,6 +171,6 @@ ws4.column_dimensions['C'].width = 95
 auto_fit_columns(ws4, min_width=8, max_width=28, header_row=4, data_start_row=5)
 
 wb.properties.creator = 'Z.ai'
-out = '/home/z/my-project/download/global_video_platforms_registry_2026.xlsx'
+out = 'download/global_video_platforms_registry_2026.xlsx'
 wb.save(out)
 print('saved', out)

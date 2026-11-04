@@ -3,8 +3,8 @@
 """make_datapackage.py — frictionless Data Package v2 descriptor generated from actual data."""
 import json, collections, hashlib
 
-W = '/home/z/my-project/registry_work/final'
-D = '/home/z/my-project/download'
+W = 'registry_work/final'
+D = 'download'
 
 reg = json.load(open(W + '/registry_final.json', encoding='utf-8'))
 recs = reg
@@ -92,5 +92,5 @@ pkg = {
 }
 json.dump(pkg, open(D + '/datapackage.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 import shutil
-shutil.copy(D + '/datapackage.json', '/home/z/my-project/datapackage.json')
+shutil.copy(D + '/datapackage.json', 'datapackage.json')
 print('datapackage.json written:', len(json.dumps(pkg)), 'bytes; sha256:', sha[:12])

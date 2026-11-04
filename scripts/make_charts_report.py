@@ -16,7 +16,7 @@ MUTED = '#5a7a96'
 STRIPE = '#eef3fa'
 TEXT = '#142840'
 
-W = '/home/z/my-project/registry_work'
+W = 'registry_work'
 records = json.load(open(W + '/final/registry_final.json', encoding='utf-8'))
 from collections import Counter
 
@@ -45,7 +45,7 @@ ax.tick_params(axis='x', colors=MUTED, labelsize=9)
 ax.set_xlim(0, max(vals) * 1.14)
 ax.grid(axis='x', linestyle='--', linewidth=0.5, alpha=0.2, zorder=0)
 ax.set_xlabel('Активных платформ (HTTP 200 или анти-бот)', fontsize=10, color=MUTED)
-fig.savefig('/home/z/my-project/registry_work/final/chart_regions.png', dpi=200,
+fig.savefig(W + '/final/chart_regions.png', dpi=200,
             facecolor='white')
 plt.close(fig)
 print('chart 1 ok')
@@ -76,7 +76,7 @@ ax.legend(wedges, legend_labels, loc='center left', bbox_to_anchor=(1.02, 0.5),
           frameon=False, fontsize=10.5, handlelength=1.0, handleheight=1.0,
           labelcolor=TEXT)
 ax.set_aspect('equal')
-fig.savefig('/home/z/my-project/registry_work/final/chart_status.png', dpi=200,
+fig.savefig(W + '/final/chart_status.png', dpi=200,
             facecolor='white')
 plt.close(fig)
 print('chart 2 ok')
