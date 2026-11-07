@@ -1,5 +1,8 @@
 # Глобальный реестр видеоплатформ 2026 / Global Video Platforms Registry
 
+<p align="center"><img src=".github/social-preview.png" alt="global-video-platforms-registry" width="100%"></p>
+
+
 ![Records](https://img.shields.io/badge/records-1071-2c7fb8)
 ![Active](https://img.shields.io/badge/active-1032-41ab5d)
 ![Verified](https://img.shields.io/badge/verified-2026--10--25-f5a623)
