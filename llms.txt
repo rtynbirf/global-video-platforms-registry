@@ -1,0 +1,37 @@
+# global-video-platforms-registry
+> Верифицированный реестр 1071 видеоплатформ (1032 активных) — окт 2026. CSV/JSON/XLSX/PDF + методология + evidence
+
+Автоген 2026-11-08 · источник: живой GitHub API (номера и файлы не руками) · владелец rtynbirf · ветка `main`
+
+## Мембрана
+- README.md — для человека (Глобальный реестр видеоплатформ 2026 / Global Video Platforms Registry)
+- AGENTS.md — есть
+- LICENSE — CC-BY-4.0
+- topics: dataset, open-data, ott, registry, research-verification, streaming, verification, video-platforms
+
+## Карта корня
+- .github/
+- .gitignore
+- AGENTS.md
+- CHANGELOG.md
+- CITATION.cff
+- CODEOWNERS
+- CODE_OF_CONDUCT.md
+- CONTRIBUTING.md
+- DATA_DICTIONARY.md
+- LICENSE
+- PULSE.md
+- README.md
+- SECURITY.md
+- datapackage.json
+- download/
+- … ещё 2
+
+## CI
+- workflow: self-audit
+- workflow: validate
+
+## Ссылки
+- [GitHub](https://github.com/rtynbirf/global-video-platforms-registry)
+- [README](https://github.com/rtynbirf/global-video-platforms-registry/blob/main/README.md)
+- [raw llms.txt](https://raw.githubusercontent.com/rtynbirf/global-video-platforms-registry/main/llms.txt)
