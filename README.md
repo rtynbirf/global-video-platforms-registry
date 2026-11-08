@@ -48,7 +48,7 @@ A machine-readable, individually verified registry of 1,071 global video platfor
 | unverified / unverified_dead | 2 | 0.2% |
 | **Всего** | **1071** | 100% |
 
-По регионам: Europe 278 · Global 234 · Asia 198 · North America 223 · Latin America 34 · Middle East 31 · CIS 15 · Africa 21 · Oceania 22 · Self-Hosted 6 · Historical 8. По категориям: broadcaster_iplayer 120, vod_subscription 115, live_streaming 55, sports 74, cinema_vod 37, vod_ad_supported 46 и др. (полная разбивка — в PDF-отчёте, раздел 3).
+По регионам: Europe 278 · Global 234 · Asia 198 · North America 223 · Latin America 34 · Middle East 31 · CIS 15 · Africa 21 · Oceania 22 · Self-Hosted 6 · Historical 8 · Unverified 1. По категориям: broadcaster_iplayer 120, vod_subscription 115, live_streaming 55, sports 74, cinema_vod 37, vod_ad_supported 46 и др. (полная разбивка — в PDF-отчёте, раздел 3).
 
 ## Методология верификации
 
@@ -131,7 +131,6 @@ eu_sports = active[(active.region == "Europe") & (active.category == "sports")]
   title  = {Global Video Platforms Registry 2026 (verified, 1071 records)},
   author = {rtynbirf and contributors},
   year   = {2026},
-  doi    = {10.5281/zenodo.TODO},
   url    = {https://github.com/rtynbirf/global-video-platforms-registry},
   note   = {v3.2, verified 2026-10-25}
 }
