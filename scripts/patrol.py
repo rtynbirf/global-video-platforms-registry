@@ -136,7 +136,8 @@ def main():
         print("Патруль: НАРУШЕНИЕ ЗОНЫ ЗАПИСИ — содержательные поля изменились; откат."); sys.exit(2)
 
     with open(src, "w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=fields, dialect=dialect)
+        # значения могут содержать кавычки/разделители внутри поля — нужен escapechar, иначе _csv.Error
+        w = csv.DictWriter(f, fieldnames=fields, dialect=dialect, escapechar="\\", quoting=csv.QUOTE_MINIMAL)
         w.writeheader()
         w.writerows(rows)
     total = len(rows)
