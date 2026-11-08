@@ -3,11 +3,12 @@
   "date": "2026-11-08",
   "rows_total": 1071,
   "probed": 107,
-  "alive": 82,
-  "failed": 25,
+  "alive": 89,
+  "failed": 18,
   "states": {
     "unverified": 964,
-    "alive": 82,
-    "suspect": 25
+    "alive": 89,
+    "stale": 17,
+    "suspect": 1
   }
 }
