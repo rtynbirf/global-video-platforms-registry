@@ -1,13 +1,12 @@
 {
   "source_csv": "download/global_video_platforms_registry_2026.csv",
   "date": "2026-11-08",
-  "rows_total": 428,
-  "probed": 42,
+  "rows_total": 1071,
+  "probed": 107,
   "alive": 0,
-  "failed": 42,
+  "failed": 107,
   "states": {
-    "unverified": 380,
-    "suspect": 39,
-    "stale": 9
+    "unverified": 964,
+    "suspect": 107
   }
 }
