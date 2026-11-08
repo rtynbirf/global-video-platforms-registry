@@ -9,8 +9,11 @@ from datetime import date
 
 PATROL_COLS = ["last_check", "http_status", "dead_streak", "patrol_state"]
 URL_KEYS = ("url", "platform_url", "site", "website", "link", "homepage")
+# UA строго ASCII: не-latin1 символы в заголовке роняют urllib.request ещё на отправке
+# (UnicodeEncodeError → мгновенный code="error", ms=0 — так «патруль» ноября 2026 ни разу
+# реально не постучался: все пробы вернули error, не доходя до сети).
 UA = ("global-video-platforms-registry-patrol/1.0 "
-      "(+https://github.com/rtynbirf/global-video-platforms-registry; ежемесячный патруль URL)")
+      "(+https://github.com/rtynbirf/global-video-platforms-registry; monthly URL patrol)")
 
 
 def first_sunday(y, m):
@@ -62,13 +65,12 @@ def main():
     src = max(candidates, key=os.path.getsize)
     print("Патруль: источник данных — %s" % src)
 
+    # Диалект строго csv.excel: Sniffer на этом файле угадывает QUOTE_NONE/doublequote=False
+    # (из-за кавычек внутри notes) — так он ИСКАЖАЕТ чтение канона и требовал escapechar при
+    # записи (первопричина _csv.Error в c8bc7e1). Канон — стандартный excel-CSV с удвоенными
+    # кавычками; читаем и пишем одинаковым csv.excel — круговой рейс точный.
     with open(src, encoding="utf-8-sig", newline="") as f:
-        head = f.read(4096)
-        f.seek(0)
-        try:
-            dialect = csv.Sniffer().sniff(head)
-        except csv.Error:
-            dialect = csv.excel
+        dialect = csv.excel
         rows = list(csv.DictReader(f, dialect=dialect))
         fields = list(rows[0].keys()) if rows else []
     url_col = next((c for c in fields if c.lower() in URL_KEYS), None) \
@@ -135,11 +137,26 @@ def main():
     if after != snapshot:
         print("Патруль: НАРУШЕНИЕ ЗОНЫ ЗАПИСИ — содержательные поля изменились; откат."); sys.exit(2)
 
-    with open(src, "w", encoding="utf-8", newline="") as f:
-        # значения могут содержать кавычки/разделители внутри поля — нужен escapechar, иначе _csv.Error
-        w = csv.DictWriter(f, fieldnames=fields, dialect=dialect, escapechar="\\", quoting=csv.QUOTE_MINIMAL)
+    # Атомарная запись: крах посреди writerows (как было до фикса диалекта в c8bc7e1)
+    # усекал реестр на месте (1071 → 428 строк). Пишем во временный файл, перечитываем,
+    # сверяем число строк И контентные поля (круговой рейс) — и только потом заменяем.
+    tmp = src + ".patrol.tmp"
+    with open(tmp, "w", encoding="utf-8", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=fields, dialect=csv.excel, quoting=csv.QUOTE_MINIMAL)
         w.writeheader()
         w.writerows(rows)
+        f.flush()
+        os.fsync(f.fileno())
+    reread = list(csv.DictReader(open(tmp, encoding="utf-8-sig", newline="")))
+    content_cols = [c for c in fields if c not in PATROL_COLS]
+    roundtrip_ok = len(reread) == len(rows) and all(
+        (a.get(c) or "") == (b.get(c) or "")
+        for a, b in zip(reread, rows) for c in content_cols)
+    if not roundtrip_ok:
+        os.remove(tmp)
+        print("Патруль: САМОПРОВЕРКА ЗАПИСИ не сошлась (строк %d ≠ %d или дрейф контента) — исходник не тронут." % (len(reread), len(rows)))
+        sys.exit(2)
+    os.replace(tmp, src)
     total = len(rows)
     states = {}
     for r in rows:
