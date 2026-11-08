@@ -1,0 +1,38 @@
+name: patrol
+# Волна ×3 · W3-E · «Патруль-Кольцо» (предложение global-video-platforms-registry#3).
+# Крон — каждое воскресенье 05:11 UTC; сам патруль работает только 1-е воскресенье месяца
+# (ограничение стандартного cron: день-месяца и день-недели объединяются по ИЛИ,
+# поэтому первый-воскресенье-фильтр встроен в scripts/patrol.py).
+# Зона записи коммита — только статус-колонки CSV и evidence.
+on:
+  schedule:
+    - cron: '11 5 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: patrol
+  cancel-in-progress: false
+
+jobs:
+  patrol:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Патруль-Кольцо (стратифицированная проба URL)
+        run: python3 scripts/patrol.py --csv-glob 'download/*.csv' --evidence-dir evidence
+
+      - name: Коммит результатов патруля (только статус-колонки и evidence)
+        run: |
+          git config user.name "patrol-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A download evidence
+          if git diff --cached --quiet; then
+            echo "Изменений нет — реестр уже актуален."
+            exit 0
+          fi
+          git commit -m "patrol: статус-колонки + evidence $(date -u +%Y-%m)"
+          git push
