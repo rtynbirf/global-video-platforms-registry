@@ -8,7 +8,6 @@
   "states": {
     "unverified": 964,
     "alive": 89,
-    "stale": 17,
-    "suspect": 1
+    "stale": 18
   }
 }
