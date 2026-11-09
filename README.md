@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="banner.png" alt="global-video-platforms-registry — Верифицированный реестр: 1071 видеоплатформа, 1032 активных" width="100%">
+</div>
+
 # Глобальный реестр видеоплатформ 2026 / Global Video Platforms Registry
 
 <p align="center"><img src=".github/social-preview.png" alt="global-video-platforms-registry" width="100%"></p>
