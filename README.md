@@ -2,6 +2,15 @@
   <img src="banner.png" alt="global-video-platforms-registry — Верифицированный реестр: 1071 видеоплатформа, 1032 активных" width="100%">
 </div>
 
+<!--ФОРЖ:МУЗА:НАЧАЛО-->
+<div align="center">
+  <img src="repo-muse.svg" width="100%" alt="Муза global-video-platforms-registry: картина кузни ПОЛИМАТ, раунд 9" />
+  <br/>
+  <img src="forge-divider.svg" width="62%" alt="разделитель кузни ПОЛИМАТ" />
+</div>
+<!--ФОРЖ:МУЗА:КОНЕЦ-->
+
+
 # Глобальный реестр видеоплатформ 2026 / Global Video Platforms Registry
 
 <p align="center"><img src=".github/social-preview.png" alt="global-video-platforms-registry" width="100%"></p>
@@ -149,3 +158,10 @@ eu_sports = active[(active.region == "Europe") & (active.category == "sports")]
 ### English summary
 
 **What:** individually verified registry of 1,071 global video platforms (1,032 confirmed active, 96.4%). Every domain HTTP-probed with a documented verdict scheme (ALIVE / BLOCKED / PARKED / MOVED…), DoH fallback and Wikipedia-grade cross-checks; rebrands and closures traced (21 `merged` rows with successors). **Why it's different:** zero padding — pirates, B2B-only infrastructure, political propaganda and adult platforms are explicitly excluded and listed in `excluded_policy`; uncertain entries stay honestly marked instead of being invented. **Format:** CSV/JSON/XLSX + a 10-page verification report (Russian), frictionless `datapackage.json`, CI-validated on every push. **License:** CC BY 4.0. See the Russian sections above for methodology and data dictionary — the schema is language-independent.
+
+<!--ФОРЖ:ПОДВАЛ-->
+---
+
+<div align="center">
+  <sub>◆ картина и штандарт — ручная ковка <a href="https://github.com/rtynbirf">КУЗНИ ПОЛИМАТ</a> · ЧЕЛОВЕК=АККАУНТ=PID1 ◆</sub>
+</div>
