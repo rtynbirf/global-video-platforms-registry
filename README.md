@@ -1,18 +1,18 @@
 <div align="center">
-  <img src="banner.png" alt="global-video-platforms-registry — Верифицированный реестр: 1071 видеоплатформа, 1032 активных" width="100%">
+  <img src="https://cdn.jsdelivr.net/gh/rtynbirf/global-video-platforms-registry@main/banner.png" alt="global-video-platforms-registry — Верифицированный реестр: 1071 видеоплатформа, 1032 активных" width="100%">
 </div>
 
 <!--ФОРЖ:МУЗА:НАЧАЛО-->
 <div align="center">
-  <img src="repo-muse.svg" width="100%" alt="Муза global-video-platforms-registry: мастерская КАРТА ЭФИРА, кузня ПОЛИМАТ, раунд 12 · REVE=РЕВО" />
+  <img src="https://cdn.jsdelivr.net/gh/rtynbirf/global-video-platforms-registry@main/repo-muse.svg" width="100%" alt="Муза global-video-platforms-registry: мастерская КАРТА ЭФИРА, кузня ПОЛИМАТ, раунд 12 · REVE=РЕВО" />
   <br/>
-  <img src="forge-divider.svg" width="62%" alt="делитель мастерской КАРТА ЭФИРА" />
+  <img src="https://cdn.jsdelivr.net/gh/rtynbirf/global-video-platforms-registry@main/forge-divider.svg" width="62%" alt="делитель мастерской КАРТА ЭФИРА" />
 </div>
 <!--ФОРЖ:МУЗА:КОНЕЦ-->
 
 <!--ФОРЖ:ПАСПОРТ:НАЧАЛО-->
 <div align="center">
-  <img src="revo-page.svg" width="100%" alt="РЕВО-паспорт страницы global-video-platforms-registry: строение файлов, лексикон, числа — по фактическому контенту" />
+  <img src="https://cdn.jsdelivr.net/gh/rtynbirf/global-video-platforms-registry@main/revo-page.svg" width="100%" alt="РЕВО-паспорт страницы global-video-platforms-registry: строение файлов, лексикон, числа — по фактическому контенту" />
 </div>
 
 | ФАЙЛОВ | ПАПОК | КОММИТОВ | ОБНОВЛЕНО | РЕЛИЗОВ |
@@ -24,7 +24,7 @@
 
 # Глобальный реестр видеоплатформ 2026 / Global Video Platforms Registry
 
-<p align="center"><img src=".github/social-preview.png" alt="global-video-platforms-registry" width="100%"></p>
+<p align="center"><img src="https://cdn.jsdelivr.net/gh/rtynbirf/global-video-platforms-registry@main/.github/social-preview.png" alt="global-video-platforms-registry" width="100%"></p>
 
 
 ![Records](https://img.shields.io/badge/records-1071-2c7fb8)
