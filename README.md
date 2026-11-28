@@ -25,6 +25,18 @@
 # global-video-platforms-registry
 
 <div align="center">
+
+<a href="https://github.com/rtynbirf/global-video-platforms-registry"><img src="banner.png" width="100%" alt="global-video-platforms-registry — штандарт мастерской в каноне ORNAMENTAL MYTHO-REALISM"></a>
+
+</div>
+
+
+
+
+
+# global-video-platforms-registry
+
+<div align="center">
   <img src="https://cdn.jsdelivr.net/gh/rtynbirf/global-video-platforms-registry@main/banner.png" alt="global-video-platforms-registry — Верифицированный реестр: 1071 видеоплатформа, 1032 активных" width="100%">
 </div>
 
