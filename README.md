@@ -1,5 +1,7 @@
 <div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/rtynbirf/global-video-platforms-registry@main/banner.png" alt="global-video-platforms-registry — Верифицированный реестр: 1071 видеоплатформа, 1032 активных" width="100%">
+
+<a href="https://github.com/rtynbirf/global-video-platforms-registry"><img src="banner.png" width="100%" alt="global-video-platforms-registry — штандарт мастерской в каноне ORNAMENTAL MYTHO-REALISM"></a>
+
 </div>
 
 <!--ФОРЖ:МУЗА:НАЧАЛО-->
@@ -12,13 +14,23 @@
 
 <!--ФОРЖ:ПАСПОРТ:НАЧАЛО-->
 <div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/rtynbirf/global-video-platforms-registry@main/revo-page.svg" width="100%" alt="РЕВО-паспорт страницы global-video-platforms-registry: строение файлов, лексикон, числа — по фактическому контенту" />
+  <img src="revo-page.svg" width="100%" alt="РЕВО-паспорт страницы global-video-platforms-registry №30 в каноне ORNAMENTAL MYTHO-REALISM: орнаментальная решётка, медальон-миф, строение файлов, лексикон — по фактическому контенту" />
 </div>
 
 | ФАЙЛОВ | ПАПОК | КОММИТОВ | ОБНОВЛЕНО | РЕЛИЗОВ |
 |---:|---:|---:|---|---:|
-| 72 | 7 | 56 | 2026-11-18 | 1 |
+| 82 | 9 | 1 | 2026-11-28 | 1 |
 <!--ФОРЖ:ПАСПОРТ:КОНЕЦ-->
+
+# global-video-platforms-registry
+
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/rtynbirf/global-video-platforms-registry@main/banner.png" alt="global-video-platforms-registry — Верифицированный реестр: 1071 видеоплатформа, 1032 активных" width="100%">
+</div>
+
+
+
+
 
 
 
